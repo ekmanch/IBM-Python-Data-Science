@@ -1,7 +1,7 @@
 # IBM_python_data_science
 
-This is my GitHub project for a program of courses offered by IBM through www.edx.org on learning to code in Python.
-Program Name    Python Data Science
+This is my GitHub project for a program of courses offered by IBM through www.edx.org on learning to code in Python.  
+Program Name:   Python Data Science
 
 The program includes the following 5 courses:
 
