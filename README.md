@@ -5,7 +5,7 @@ Program Name    Python Data Science
 
 The program includes the following 5 courses:
 
-Course 1
+Course 1  
 Course ID     IBM PY0101EN  
 Course Name   Python Basics for Data Science
 
