@@ -9,18 +9,18 @@ Course 1
 Course ID     IBM PY0101EN  
 Course Name   Python Basics for Data Science
 
-Course 2
+Course 2  
 Course ID     
 Course Name   Analyzing Data with Python
 
-Course 3
+Course 3  
 Course ID     
 Course Name   Visualizing Data with Python
 
-Course 4
+Course 4  
 Course ID     
 Course Name   Machine Learning with Python: A Practical Introduction
 
-Course 5
+Course 5  
 Course ID     
 Course Name   Data Science and Machine Learning Capstone Project
