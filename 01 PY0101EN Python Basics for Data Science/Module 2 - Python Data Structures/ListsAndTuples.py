@@ -1,3 +1,7 @@
+################################################################
+# Tuples Lab
+################################################################
+
 # create the Tuple  (0,1,2,3)  and assign it to the variable  A :
 
 A = (0,1,2,3)
@@ -175,3 +179,173 @@ print(genres_tuple.index("disco"))
 C_tuple=(-5, 1, -3)
 
 print(sorted(C_tuple))
+
+################################################################
+# Lists Lab
+################################################################
+
+# Create a list
+
+L = ["Michael Jackson", 10.1, 1982]
+print(L)
+
+# Print the elements on each index
+
+print('the same element using negative and positive indexing:\n Postive:',L[0],
+'\n Negative:' , L[-3]  )
+print('the same element using negative and positive indexing:\n Postive:',L[1],
+'\n Negative:' , L[-2]  )
+print('the same element using negative and positive indexing:\n Postive:',L[2],
+'\n Negative:' , L[-1]  )
+
+# Lists can contain strings, floats, and integers. We can nest other lists
+# and we can also nest tuples and other data structures.
+# The same indexing conventions apply for nesting:
+
+# Sample List
+
+print(["Michael Jackson", 10.1, 1982, [1, 2], ("A", 1)])
+
+# We can also perform slicing in lists.
+# For example, if we want the last two elements, we use the following command:
+
+# Sample List
+
+L = ["Michael Jackson", 10.1,1982,"MJ",1]
+print(L)
+
+# List slicing
+
+print(L[3:5])
+
+# We can use the method extend to add new elements to the list:
+
+# Use extend to add elements to list
+
+L = [ "Michael Jackson", 10.2]
+L.extend(['pop', 10])
+print(L)
+
+# Another similar method is append.
+# If we apply append instead of extend, we add one element to the list:
+
+# Use append to add elements to list
+
+L = [ "Michael Jackson", 10.2]
+L.append(['pop', 10])
+print(L)
+
+# Each time we apply a method, the list changes.
+# If we apply extend we add two new elements to the list.
+# The list L is then modified by adding two new elements:
+
+# Use extend to add elements to list
+
+L = [ "Michael Jackson", 10.2]
+L.extend(['pop', 10])
+print(L)
+
+# If we append the list ['a','b']
+# we have one new element consisting of a nested list:
+
+# Use append to add elements to list
+
+L.append(['a','b'])
+print(L)
+
+# As lists are mutable, we can change them.
+# For example, we can change the first element as follows:
+
+# Change the element based on the index
+
+A = ["disco", 10, 1.2]
+print('Before change:', A)
+A[0] = 'hard rock'
+print('After change:', A)
+
+# We can also delete an element of a list using the del command:
+
+# Delete the element based on the index
+
+print('Before change:', A)
+del(A[0])
+print('After change:', A)
+
+# We can convert a string to a list using split.
+# For example, the method split translates
+# every group of characters separated by a space into an element in a list:
+
+# Split the string, default is by space
+
+print('hard rock'.split())
+
+# We can use the split function to separate strings on a specific character.
+# We pass the character we would like to split on into the argument
+# which in this case is a comma.
+# The result is a list, and each element corresponds to a set of characters
+# that have been separated by a comma:
+
+# Split the string by comma
+
+print('A,B,C,D'.split(','))
+
+# When we set one variable B equal to A;
+# both A and B are referencing the same list in memory:
+
+# Copy (copy by reference) the list A
+
+A = ["hard rock", 10, 1.2]
+B = A
+print('A:', A)
+print('B:', B)
+
+# Initially, the value of the first element in B is set as hard rock.
+# If we change the first element in A to banana, we get an unexpected side effect.
+# As A and B are referencing the same list,
+# if we change list A, then list B also changes.
+# If we check the first element of B we get banana instead of hard rock:
+
+# Examine the copy by reference
+
+print('B[0]:', B[0])
+A[0] = "banana"
+print('B[0]:', B[0])
+
+# You can clone list A by using the following syntax:
+
+# Clone (clone by value) the list A
+
+B = A[:]
+print(B)
+
+# Now if you change A, B will not change:
+
+print('B[0]:', B[0])
+A[0] = "hard rock"
+print('B[0]:', B[0])
+
+################################################################
+# Lists Quiz
+################################################################
+
+# Create a list a_list, with the following elements 1, hello, [1,2,3] and True.
+
+a_list = [1, 'hello', [1,2,3], True]
+print(a_list)
+
+# Find the value stored at index 1 of a_list.
+
+print(a_list[1])
+
+# Retrieve the elements stored at index 1, 2 and 3 of a_list.
+
+print(a_list[1:4])
+
+# Concatenate the following lists A = [1, 'a'] and B = [2, 1, 'd']:
+
+A = [1, 'a']
+B = [2,1,'d']
+
+# A.extend(B)
+
+print(A + B)
