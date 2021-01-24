@@ -8,7 +8,7 @@ The program consist of the following 5 courses:
 Course Order | Course ID | Course Name
 ------------ | ------------- | -------------
 01 | IBM PY0101EN | Python Basics for Data Science
-02 | IBM TBD | Analyzing Data with Python
-03 | IBM TBD | Visualizing Data with Python
-04 | IBM TBD | Machine Learning with Python: A Practical Introduction
-05 | IBM TBD | Data Science and Machine Learning Capstone Project
+02 | IBM TBC | Analyzing Data with Python
+03 | IBM TBC | Visualizing Data with Python
+04 | IBM TBC | Machine Learning with Python: A Practical Introduction
+05 | IBM TBC | Data Science and Machine Learning Capstone Project
