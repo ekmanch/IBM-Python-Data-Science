@@ -9,6 +9,9 @@ Course Order | Course ID | Course Name
 ------------ | ------------- | -------------
 01 | IBM PY0101EN | Python Basics for Data Science
 02 | IBM TBD | Analyzing Data with Python
+03 | IBM TBD | Visualizing Data with Python
+04 | IBM TBD | Machine Learning with Python: A Practical Introduction
+05 | IBM TBD | Data Science and Machine Learning Capstone Project
 
 Course 1  
 Course ID:      IBM PY0101EN  
