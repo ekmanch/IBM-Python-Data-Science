@@ -26,3 +26,31 @@ y=1
 while(y != x):
     print(y)
     y=y+1
+
+############################################
+# Loops Quiz
+############################################
+
+print("QUIZ")
+
+# Question 1
+# what is the output of the following lines of code:
+
+A=[3,4,5]
+
+for a in A:
+    print(a)
+
+# Answer prediction: 3\n4\n5
+
+# Question 2
+# what is the output of the following lines of code:
+
+x=3
+y=1
+
+while(y!= x):
+    print(y)
+    y=y+1
+
+# Answer prediction: 1\n2
