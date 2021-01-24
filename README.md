@@ -3,7 +3,12 @@
 This is my GitHub project for a program of courses offered by IBM through www.edx.org on learning to code in Python.  
 Program Name:   Python Data Science
 
-The program includes the following 5 courses:
+The program consist of the following 5 courses:
+
+Course Order | Course ID | Course Name
+------------ | ------------- | -------------
+01 | IBM PY0101EN | Python Basics for Data Science
+02 | IBM TBD | Analyzing Data with Python
 
 Course 1  
 Course ID:      IBM PY0101EN  
