@@ -73,3 +73,100 @@ my_car.sell()
 # Objects and Classes Lab
 ############################################
 
+print("Objects and Classes Lab EXERCISES")
+
+# Text Analysis
+# You have been recruited by your friend, a linguistics enthusiast
+# to create a utility tool that can perform analysis on a given piece of text.
+# Complete the class 'analysedText' with the following methods -
+#
+# Constructor - Takes argument 'text'
+# makes it lower case and removes all punctuation.
+# Assume only the following punctuation is used
+# period (.), exclamation mark (!), comma (,) and question mark (?).
+# Store the argument in "fmtText"
+# 
+# freqAll - returns a dictionary of all unique words in the text
+# along with the number of their occurences.
+# 
+# freqOf - returns the frequency of the word passed in argument.
+# 
+# The skeleton code has been given to you.
+# Docstrings can be ignored for the purpose of the exercise.
+# Hint: Some useful functions are replace(), lower(), split(), count()
+
+# class analysedText(object):
+#
+#    def __init__ (self, text):
+#        pass
+#    
+#    def freqAll(self):        
+#        pass
+#    
+#    def freqOf(self,word):
+#        pass
+
+
+class analysedText(object):
+    
+    def __init__ (self, text):
+        text = text.lower()
+        text = text.replace('.', '')
+        text = text.replace(',', '')
+        text = text.replace('?', '')
+        text = text.replace('!', '')
+        self.fmtText = text
+        self.list = text.split()
+        pass
+    
+    def freqAll(self):
+        word_dict = {}
+        temp_word = self.fmtText
+
+        for i, words in enumerate(self.list):
+            if self.list[i] not in word_dict:
+                word_dict[words] = self.list.count(words)
+            else:
+                continue
+        return word_dict
+    
+    def freqOf(self,word):
+        return self.list.count(word)
+
+
+
+# Execute the block below to check your progress.
+
+import sys
+
+sampleMap = {'eirmod': 1,'sed': 1, 'amet': 2, 'diam': 5, 'consetetur': 1, 'labore': 1, 'tempor': 1, 'dolor': 1, 'magna': 2, 'et': 3, 'nonumy': 1, 'ipsum': 1, 'lorem': 2}
+
+def testMsg(passed):
+    if passed:
+       return 'Test Passed'
+    else :
+       return 'Test Failed'
+
+print("Constructor: ")
+try:
+    samplePassage = analysedText("Lorem ipsum dolor! diam amet, consetetur Lorem magna. sed diam nonumy eirmod tempor. diam et labore? et diam magna. et diam amet.")
+    print(testMsg(samplePassage.fmtText == "lorem ipsum dolor diam amet consetetur lorem magna sed diam nonumy eirmod tempor diam et labore et diam magna et diam amet"))
+except:
+    print("Error detected. Recheck your function " )
+print("freqAll: ")
+try:
+    wordMap = samplePassage.freqAll()
+    print(testMsg(wordMap==sampleMap))
+except:
+    print("Error detected. Recheck your function " )
+print("freqOf: ")
+try:
+    passed = True
+    for word in sampleMap:
+        if samplePassage.freqOf(word) != sampleMap[word]:
+            passed = False
+            break
+    print(testMsg(passed))
+    
+except:
+    print("Error detected. Recheck your function  " )
