@@ -2,6 +2,8 @@
 # Objects and Classes Quick Practice Lab
 ############################################
 
+print("Objects and Classes Quick Practice LAB")
+
 # You will need the class Car for the next exercises.
 # The class Car has four data attributes:
 # make, model, colour and number of owners (owner_number).
@@ -45,5 +47,29 @@ print(my_car.car_info())
 
 ############################################
 # Objects and Classes Quiz
+############################################
+
+print("Objects and Classes QUIZ")
+
+# Question 1
+# Using the Class Car in the lab
+# create a Car object with the following attributes:
+# make="Honda"
+# model="Accord"
+# color="blue"
+
+my_car = Car(make="Honda", model="Accord", color="blue")
+my_car = Car("Honda","Accord","blue")
+
+print(my_car.car_info())
+
+# Question 2
+# From the lab how would you change the data attribute owner_number
+
+# Correct answer:
+my_car.sell()
+
+############################################
+# Objects and Classes Lab
 ############################################
 
