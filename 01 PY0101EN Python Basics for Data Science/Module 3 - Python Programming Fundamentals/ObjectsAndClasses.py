@@ -121,7 +121,6 @@ class analysedText(object):
     
     def freqAll(self):
         word_dict = {}
-        temp_word = self.fmtText
 
         for i, words in enumerate(self.list):
             if self.list[i] not in word_dict:
