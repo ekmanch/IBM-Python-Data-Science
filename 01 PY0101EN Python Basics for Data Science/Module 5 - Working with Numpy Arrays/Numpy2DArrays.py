@@ -39,3 +39,29 @@ print(A*B)
 # 2) Perform matrix multiplication on array  A and  B (order will not matter in this case)
 
 print(np.dot(A,B))
+
+#################################################
+# Numpy 2D Arrays Quiz
+#################################################
+
+print("QUIZ")
+
+# Question 1
+# How many rows is the following numpy array?
+
+A=np.array([[1,2],[3,4],[5,6],[7,8]])
+
+# Prediction: 4,2 array, 4 rows, 2 columns
+
+print(A.shape)
+
+# Question 2
+# How can you perform the following operation?
+# np.dot(A,B)
+
+A=np.array([[1,2],[3,4],[5,6],[7,8]])
+B=np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+# Prediction: You can't. They don't have the correct dimensions (A is 4,2 and B is 3,3)
+
+# np.dot(A,B) <- Uncomment to see error message when running script
