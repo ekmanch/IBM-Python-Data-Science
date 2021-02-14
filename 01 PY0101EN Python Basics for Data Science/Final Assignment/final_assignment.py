@@ -104,3 +104,23 @@ for i, player in enumerate(player_df):
 
 import matplotlib.pyplot as plt
 
+# Using the function plt.plot() plot the Points per game,
+# for one player.
+# Just a note you can plot a dataframe column like a numpy array.
+# You can also plot them for each player.
+# Find out how to add a xlabel 'years', a ylabel 'Points per game' and a legend.
+
+# Given:
+#plt.plot(data_frame[['Points per game']],label=name)
+#plt.legend()
+#plt.xlabel('years')
+#plt.ylabel('Points per game')
+
+for i, df in enumerate(player_df):
+    plt.plot(df[['Points per game']],label=names[i])
+
+plt.legend()
+plt.xlabel('years')
+plt.ylabel('Points per game')
+
+plt.show()
