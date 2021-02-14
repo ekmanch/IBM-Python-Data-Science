@@ -32,7 +32,7 @@ In this course you will learn about:
 * How to operate on files to read and write data in Python
 * How to use pandas, a must-have package for anyone attempting data analysis in Python
 * How to use Numpy arrays
-* APIs and libraries in Python
+* APIs and web scraping in Python
 
 # Analyzing Data with Python
 
