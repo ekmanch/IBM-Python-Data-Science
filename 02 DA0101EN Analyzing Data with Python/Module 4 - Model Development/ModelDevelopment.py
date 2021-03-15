@@ -86,3 +86,21 @@ print("The coefficients of the Multiple Linear Regression Model are: ", lm2.coef
 # import the visualization package: seaborn
 import seaborn as sns
 
+# Regression Plot
+
+#########################################################################
+# Question 3                                                            #
+# Given the regression plots above,                                     #
+# is "peak-rpm" or "highway-mpg" more strongly correlated with "price". #
+# Use the method ".corr()" to verify your answer.                       #
+#########################################################################
+
+# You can see from this output that highway-mpg is much more strongly correlated with price
+print(df[['peak-rpm', 'highway-mpg', 'price']].corr())
+
+# Residual Plot
+
+#%%
+
+# Polynomial Regression and Pipelines
+
