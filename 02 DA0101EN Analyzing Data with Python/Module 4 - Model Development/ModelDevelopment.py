@@ -174,4 +174,3 @@ from sklearn.metrics import r2_score
 
 import matplotlib.pyplot as plt
 import numpy as np
-
