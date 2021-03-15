@@ -58,3 +58,31 @@ yhat = lm.intercept_ + lm.coef_*df[['engine-size']]
 
 # Multiple Linear Regression
 
+#########################################################################
+# Question 2a                                                           #
+# Create and train a Multiple Linear Regression model "lm2"             #
+# where the response variable is price,                                 #
+# and the predictor variable is 'normalized-losses' and 'highway-mpg'.  #
+#########################################################################
+
+lm2 = LinearRegression()
+
+Z = df[['normalized-losses', 'highway-mpg']]
+Y = df['price']
+
+lm2.fit(Z,Y)
+
+#################################################
+# Question 2b                                   #
+# Find the coefficient of the model?            #
+#################################################
+
+print("The coefficients of the Multiple Linear Regression Model are: ", lm2.coef_)
+
+#%%
+
+# Model Evaluation Using Visualization
+
+# import the visualization package: seaborn
+import seaborn as sns
+
