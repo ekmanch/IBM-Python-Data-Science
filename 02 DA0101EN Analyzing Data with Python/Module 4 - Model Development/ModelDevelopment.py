@@ -163,3 +163,15 @@ print("The predicted value from the Pipeline:\n", ypipe[0:10])
 #%%
 
 # Measures for In-Sample Evaluation
+
+from sklearn.metrics import mean_squared_error
+
+from sklearn.metrics import r2_score
+
+#%%
+
+# Prediction and Decision Making
+
+import matplotlib.pyplot as plt
+import numpy as np
+
