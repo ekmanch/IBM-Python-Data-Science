@@ -104,3 +104,62 @@ print(df[['peak-rpm', 'highway-mpg', 'price']].corr())
 
 # Polynomial Regression and Pipelines
 
+# Given Function:
+def PlotPolly(model, independent_variable, dependent_variabble, Name):
+    x_new = np.linspace(15, 55, 100)
+    y_new = model(x_new)
+
+    plt.plot(independent_variable, dependent_variabble, '.', x_new, y_new, '-')
+    plt.title('Polynomial Fit with Matplotlib for Price ~ Length')
+    ax = plt.gca()
+    ax.set_facecolor((0.898, 0.898, 0.898))
+    fig = plt.gcf()
+    plt.xlabel(Name)
+    plt.ylabel('Price of Cars')
+
+    plt.show()
+    plt.close()
+
+#################################################################
+# Question 4                                                    #
+# Create 11 order polynomial model with the variables x and y.  #
+#################################################################
+
+x = df['highway-mpg']
+y = df['price']
+
+f = np.polyfit(x, y, 11)
+p = np.poly1d(f)
+print(p)
+PlotPolly(p, x, y, 'highway-mpg')
+
+# Multivariate Polynomial Regression
+
+from sklearn.preprocessing import PolynomialFeatures
+
+#%%
+
+# Pipelines
+
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+
+#################################################################################################
+# Question 5                                                                                    #
+# Create a pipeline that Standardizes the data,                                                 #
+# then perform prediction using a linear regression model using the features Z and targets y    #
+#################################################################################################
+
+Input=[('scale',StandardScaler()), ('model',LinearRegression())]
+
+pipe = Pipeline(Input)
+
+pipe.fit(Z,Y)
+
+ypipe=pipe.predict(Z)
+
+print("The predicted value from the Pipeline:\n", ypipe[0:10])
+
+#%%
+
+# Measures for In-Sample Evaluation
