@@ -13,6 +13,7 @@ from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import cross_val_predict
 from sklearn.preprocessing import PolynomialFeatures
 from ipywidgets import interact, interactive, fixed, interact_manual
+from sklearn.datasets import load_iris
 
 # Import clean data 
 path = 'https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0101EN-SkillsNetwork/labs/Data%20files/module_5_auto.csv'
@@ -32,6 +33,7 @@ def DistributionPlot(RedFunction, BlueFunction, RedName, BlueName, Title):
     plt.title(Title)
     plt.xlabel('Price (in dollars)')
     plt.ylabel('Proportion of Cars')
+    plt.legend()
 
     plt.show()
     plt.close()
@@ -175,3 +177,14 @@ print("The test set has", x_test_pr1.shape, "dimensions")
 poly1 = LinearRegression()
 poly1.fit(x_train_pr1, y_train)
 
+#############################################################################
+# Question 4e                                                               #
+# Use the method "predict" to predict an output on the polynomial features, #
+# then use the function "DistributionPlot" to display the distribution of   #
+# the predicted output vs the test data?                                    #
+#############################################################################
+
+yhat_poly1 = poly1.predict(x_test_pr1)
+
+Title = 'Distribution  Plot of  Predicted Value Using Test Data vs Test Data Distribution'
+DistributionPlot(y_test, yhat_poly1, "Actual Values (Test)", "Predicted Values (Test)", Title)
