@@ -188,3 +188,13 @@ yhat_poly1 = poly1.predict(x_test_pr1)
 
 Title = 'Distribution  Plot of  Predicted Value Using Test Data vs Test Data Distribution'
 DistributionPlot(y_test, yhat_poly1, "Actual Values (Test)", "Predicted Values (Test)", Title)
+
+#############################################################################
+# Question 4f                                                               #
+# Using the distribution plot above, explain in words about the two regions #
+# where the predicted prices are less accurate than the actual prices       #
+#############################################################################
+
+# The predicted values is higher than the actual values around 10k.
+# The predicted values are also lower than the actual values around 30-40k?
+# The model is not entirely accurate in these two regions.
