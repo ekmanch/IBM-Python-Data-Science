@@ -13,7 +13,7 @@ from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import cross_val_predict
 from sklearn.preprocessing import PolynomialFeatures
 from ipywidgets import interact, interactive, fixed, interact_manual
-from sklearn.datasets import load_iris
+from sklearn.linear_model import Ridge
 
 # Import clean data 
 path = 'https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0101EN-SkillsNetwork/labs/Data%20files/module_5_auto.csv'
@@ -187,7 +187,8 @@ poly1.fit(x_train_pr1, y_train)
 yhat_poly1 = poly1.predict(x_test_pr1)
 
 Title = 'Distribution  Plot of  Predicted Value Using Test Data vs Test Data Distribution'
-DistributionPlot(y_test, yhat_poly1, "Actual Values (Test)", "Predicted Values (Test)", Title)
+# Uncomment below if you want to plot the graph
+# DistributionPlot(y_test, yhat_poly1, "Actual Values (Test)", "Predicted Values (Test)", Title)
 
 #############################################################################
 # Question 4f                                                               #
@@ -203,3 +204,21 @@ DistributionPlot(y_test, yhat_poly1, "Actual Values (Test)", "Predicted Values (
 
 # Part 3: Ridge regression
 
+pr=PolynomialFeatures(degree=2)
+x_train_pr=pr.fit_transform(x_train[['horsepower', 'curb-weight', 'engine-size', 'highway-mpg','normalized-losses','symboling']])
+x_test_pr=pr.fit_transform(x_test[['horsepower', 'curb-weight', 'engine-size', 'highway-mpg','normalized-losses','symboling']])
+
+#################################################################################
+# Question 5                                                                    #
+# Perform Ridge regression and calculate the R^2 using the polynomial features, #
+# use the training data to train the model and test data to test the model.     #
+# The parameter alpha should be set to 10.                                      #
+#################################################################################
+
+print("\nQuestion 5\n")
+
+RigeModel=Ridge(alpha=10)
+
+RigeModel.fit(x_train_pr, y_train)
+
+print("The R^2 score of the ridge regression model with alpha = 10 is", RigeModel.score(x_test_pr, y_test))
