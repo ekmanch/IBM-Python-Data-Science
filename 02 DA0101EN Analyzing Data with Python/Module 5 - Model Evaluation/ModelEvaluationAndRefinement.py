@@ -151,3 +151,5 @@ pr1 = PolynomialFeatures(degree=2)
 # Hint: use the method "fit_transform" ?                        #
 #################################################################
 
+x_train_pr1 = pr1.fit_transform(x_train[['horsepower', 'curb-weight', 'engine-size', 'highway-mpg']])
+x_test_pr1 = pr1.fit_transform(x_test[['horsepower', 'curb-weight', 'engine-size', 'highway-mpg']])
