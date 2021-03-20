@@ -172,3 +172,6 @@ print("The test set has", x_test_pr1.shape, "dimensions")
 # the object using the method "fit"using the polynomial features?   #
 #####################################################################
 
+poly1 = LinearRegression()
+poly1.fit(x_train_pr1, y_train)
+
