@@ -14,6 +14,7 @@ from sklearn.model_selection import cross_val_predict
 from sklearn.preprocessing import PolynomialFeatures
 from ipywidgets import interact, interactive, fixed, interact_manual
 from sklearn.linear_model import Ridge
+from sklearn.model_selection import GridSearchCV
 
 # Import clean data 
 path = 'https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0101EN-SkillsNetwork/labs/Data%20files/module_5_auto.csv'
@@ -226,3 +227,27 @@ print("The R^2 score of the ridge regression model with alpha = 10 is", RigeMode
 #%%
 
 # Part 4: Grid Search
+
+#####################################################################################
+# Question 6                                                                        #
+# Perform a grid search for the alpha parameter and the normalization parameter,    #
+# then find the best values of the parameters                                       #
+#####################################################################################
+
+print("\nQuestion 6\n")
+
+parameters2= [{
+    'alpha': [0.001,0.1,1, 10, 100, 1000, 10000, 100000, 100000],
+    'normalize': [True, False]
+    }]
+
+Grid2 = GridSearchCV(Ridge(), parameters2,cv=4)
+
+Grid2.fit(x_data[['horsepower', 'curb-weight', 'engine-size', 'highway-mpg']], y_data)
+
+BestRR2 = Grid2.best_estimator_
+print("The best estimator after Grid Search is:", BestRR2)
+
+BestRR2_score = BestRR2.score(x_test[['horsepower', 'curb-weight', 'engine-size', 'highway-mpg']], y_test)
+
+print("The R^2 score of the best estimator is:", BestRR2_score)
