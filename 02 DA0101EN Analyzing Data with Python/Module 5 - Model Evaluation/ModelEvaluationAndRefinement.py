@@ -105,5 +105,17 @@ print("R^2 score on test data: ", lre.score(x_test_1[['horsepower']], y_test_1))
 
 print("R^2 score on training data: ", lre.score(x_train_1[['horsepower']], y_train_1))
 
+#####################################################################################
+# Question 3                                                                        #
+# Calculate the average R^2 using two folds,                                        #
+# find the average R^2 for the second fold utilizing the horsepower as a feature    #
+#####################################################################################
 
+print("\nQuestion 3\n")
+
+Rcross_1 = cross_val_score(lre, x_data[['horsepower']], y_data, cv=2)
+
+print("Avg R^2 score on each fold:", Rcross_1)
+
+print("The mean of the folds are", Rcross_1.mean(), "and the standard deviation is" , Rcross_1.std())
 
