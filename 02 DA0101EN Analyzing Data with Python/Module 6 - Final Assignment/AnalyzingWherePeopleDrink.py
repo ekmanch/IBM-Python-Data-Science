@@ -52,3 +52,6 @@ print(df['beer_servings'].describe())
 
 print("\nQuestion 4\n")
 
+sns.boxplot(x="continent", y="beer_servings", data=df)
+plt.show()
+plt.close()
