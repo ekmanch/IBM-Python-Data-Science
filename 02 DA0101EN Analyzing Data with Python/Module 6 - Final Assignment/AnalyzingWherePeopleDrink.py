@@ -12,6 +12,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler,PolynomialFeatures
+from sklearn.linear_model import Ridge
 
 df= pd.read_csv('https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/DA0101EN/edx/project/drinks.csv')
 # df.to_csv('original.csv')     <- Uncomment to save dataset
@@ -142,3 +143,20 @@ pipe = Pipeline(Input)
 pipe.fit(x_train,y_train)
 
 print("The R^2 score of the model using test data is:", pipe.score(x_test, y_test))
+
+#####################################################################
+# Question 9                                                        #
+# Create and fit a Ridge regression object using the training data, #
+# setting the regularization parameter to 0.1 and calculate         #
+# the  𝑅2  using the test data.                                     #
+# Take a screenshot of your code and the  𝑅2                        #
+#####################################################################
+
+print("\nQuestion 9\n")
+
+RidgeModel = Ridge(alpha=0.1)
+
+RidgeModel.fit(x_train, y_train)
+
+# The resulting R^2 is 0.699030454901918
+print("The R^2 score of the model using test data is:", RidgeModel.score(x_test, y_test))
