@@ -10,6 +10,7 @@ import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import cross_val_predict
 
 # Import clean data 
 path = 'https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0101EN-SkillsNetwork/labs/Data%20files/module_5_auto.csv'
@@ -119,3 +120,6 @@ print("Avg R^2 score on each fold:", Rcross_1)
 
 print("The mean of the folds are", Rcross_1.mean(), "and the standard deviation is" , Rcross_1.std())
 
+#%%
+
+# Part 2: Overfitting, Underfitting and Model Selection
