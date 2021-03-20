@@ -3,15 +3,19 @@
 This is my GitHub repository for a program of courses offered by IBM through www.edx.org on learning to code in Python.  
 Program Name:  [Python Data Science](https://www.edx.org/professional-certificate/python-data-science)
 
-The program consists of the following 5 courses:
+The program consists of the following 9 courses:
 
 Course Order | Course ID | Course Name
 ------------ | ------------- | -------------
 01 | IBM PY0101EN | Python Basics for Data Science
 02 | IBM DA0101EN | Analyzing Data with Python
-03 | IBM TBC | Visualizing Data with Python
-04 | IBM TBC | Machine Learning with Python: A Practical Introduction
-05 | IBM TBC | Data Science and Machine Learning Capstone Project
+03 | IBM DS0101EN | Introduction to Data Science
+04 | IBM TBC | Data Science Tools
+05 | IBM TBC | The Data Science Method
+06 | IBM TBC | SQL for Data Science
+07 | IBM TBC | Visualizing Data with Python
+08 | IBM TBC | Machine Learning with Python: A Practical Introduction
+09 | IBM TBC | Data Science and Machine Learning Capstone Project
 
 ## Course Descriptions
 
@@ -57,6 +61,14 @@ Topics covered:
 Analyzing Data with Python will be delivered through lecture, lab, and assignments and includes the following parts: 
 
 Data Analysis libraries: will learn to use Pandas, Numpy and Scipy libraries to work with a sample data set. We will introduce you to pandas, an open-source library, and we will use it to load, manipulate, analyze, and visualize cool data sets. Then we will introduce you to another open-source library, scikit-learn, and we will use some of its machine learning algorithms to build smart models and make cool predictions.
+
+# Introduction to Data Science
+
+# Data Science Tools
+
+# The Data Science Method
+
+# SQL for Data Science
 
 # Visualizing Data with Python
 
