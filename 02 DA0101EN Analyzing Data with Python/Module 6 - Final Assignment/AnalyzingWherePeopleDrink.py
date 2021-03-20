@@ -8,6 +8,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import seaborn as sns
+from sklearn.linear_model import LinearRegression
 
 df= pd.read_csv('https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/DA0101EN/edx/project/drinks.csv')
 # df.to_csv('original.csv')     <- Uncomment to save dataset
@@ -70,7 +71,7 @@ print("Scatter Plot was shown")
 # From Scatter Plot below it seems like there is a positive correlation
 sns.regplot(x="beer_servings", y="wine_servings", data=df)
 plt.ylim(0,)
-plt.show()
+# plt.show()    <- Uncomment to show scatter plot
 plt.close()
 
 #################################################################################
@@ -78,4 +79,25 @@ plt.close()
 # Fit a linear regression model to predict the 'total_litres_of_pure_alcohol'   #
 # using the number of 'wine_servings' then calculate  𝑅2                        #
 ########################################################################################
+
+print("\nQuestion 6\n")
+
+lm = LinearRegression()
+
+X = df[['wine_servings']]
+Y = df[['total_litres_of_pure_alcohol']]
+
+lm.fit(X,Y)
+
+print("The R^2 score of the linear regression model is:", lm.score(X,Y))
+
+#########################################################################################
+# Question 7                                                                            #
+# Use list of features to predict the 'total_litres_of_pure_alcohol',                   #
+# split the data into training and testing and determine the  𝑅2  on the test data,     #
+# using the provided code:                                                              #
+# Note: Please use test_size = 0.10 and random_state = 0 in the following questions.    #
+#########################################################################################
+
+print("\nQuestion 7\n")
 
