@@ -7,6 +7,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
+import seaborn as sns
 
 df= pd.read_csv('https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/DA0101EN/edx/project/drinks.csv')
 # df.to_csv('original.csv')     <- Uncomment to save dataset
@@ -30,7 +31,9 @@ print(df.dtypes)
 
 print("\nQuestion 2\n")
 
-print(df.groupby('continent').sum())
+df1 = df[['wine_servings', 'continent']]
+
+print(df1.groupby('continent').sum())
 
 #####################################################################################
 # Question 3                                                                        #
@@ -40,3 +43,12 @@ print(df.groupby('continent').sum())
 print("\nQuestion 3\n")
 
 print(df['beer_servings'].describe())
+
+#############################################################################
+# Question 4                                                                #
+# Use the function boxplot in the seaborn library to produce a plot         #
+# that can be used to show the number of beer servings on each continent.   #
+#############################################################################
+
+print("\nQuestion 4\n")
+
