@@ -11,13 +11,13 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import cross_val_predict
+from sklearn.preprocessing import PolynomialFeatures
+from ipywidgets import interact, interactive, fixed, interact_manual
 
 # Import clean data 
 path = 'https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0101EN-SkillsNetwork/labs/Data%20files/module_5_auto.csv'
 df = pd.read_csv(path)
 # df.to_csv('module_5_auto.csv')    <- Uncomment to save CSV
-
-from ipywidgets import interact, interactive, fixed, interact_manual
 
 # Functions for plotting
 
@@ -60,6 +60,15 @@ def PollyPlot(xtrain, xtest, y_train, y_test, lr,poly_transform):
     plt.ylim([-10000, 60000])
     plt.ylabel('Price')
     plt.legend()
+
+def f(order, test_data):
+    x_train, x_test, y_train, y_test = train_test_split(x_data, y_data, test_size=test_data, random_state=0)
+    pr = PolynomialFeatures(degree=order)
+    x_train_pr = pr.fit_transform(x_train[['horsepower']])
+    x_test_pr = pr.fit_transform(x_test[['horsepower']])
+    poly = LinearRegression()
+    poly.fit(x_train_pr,y_train)
+    PollyPlot(x_train[['horsepower']], x_test[['horsepower']], y_train,y_test, poly, pr)
 
 #%%
 
@@ -123,3 +132,22 @@ print("The mean of the folds are", Rcross_1.mean(), "and the standard deviation 
 #%%
 
 # Part 2: Overfitting, Underfitting and Model Selection
+
+# Below can only be used in jupyter notebooks
+# interact(f, order=(0, 6, 1), test_data=(0.05, 0.95, 0.05))
+
+#########################################################################
+# Question 4a                                                           #
+# We can perform polynomial transformations with more than one feature. #
+# Create a "PolynomialFeatures" object "pr1" of degree two?             #
+#########################################################################
+
+pr1 = PolynomialFeatures(degree=2)
+
+#################################################################
+# Question 4b                                                   #
+# Transform the training and testing samples for the features   #
+# 'horsepower', 'curb-weight', 'engine-size' and 'highway-mpg'. #
+# Hint: use the method "fit_transform" ?                        #
+#################################################################
+
