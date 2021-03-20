@@ -222,3 +222,7 @@ RigeModel=Ridge(alpha=10)
 RigeModel.fit(x_train_pr, y_train)
 
 print("The R^2 score of the ridge regression model with alpha = 10 is", RigeModel.score(x_test_pr, y_test))
+
+#%%
+
+# Part 4: Grid Search
