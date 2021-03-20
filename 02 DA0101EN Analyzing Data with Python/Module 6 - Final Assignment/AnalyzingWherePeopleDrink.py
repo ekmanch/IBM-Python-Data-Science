@@ -160,3 +160,26 @@ RidgeModel.fit(x_train, y_train)
 
 # The resulting R^2 is 0.699030454901918
 print("The R^2 score of the model using test data is:", RidgeModel.score(x_test, y_test))
+
+#########################################################################################
+# Question 10                                                                           #
+# Perform a 2nd order polynomial transform on both the training data and testing data.  #
+# Create and fit a Ridge regression object using the training data,                     #
+# setting the regularization parameter to 0.1.                                          #
+# Calculate the  𝑅2  utilizing the test data provided.                                  #
+# Take a screen-shot of your code and the  𝑅2.                                          #
+#########################################################################################
+
+print("\nQuestion 10\n")
+
+pr = PolynomialFeatures(degree=2)
+
+x_train_pr = pr.fit_transform(x_train)
+x_test_pr = pr.fit_transform(x_test)
+
+RidgeModel = Ridge(alpha=0.1)
+
+RidgeModel.fit(x_train_pr, y_train)
+
+# The resulting R^2 is 0.7076376228095793
+print("The R^2 score of the model using test data is:", RidgeModel.score(x_test_pr, y_test))
