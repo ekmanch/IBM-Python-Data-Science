@@ -198,3 +198,8 @@ DistributionPlot(y_test, yhat_poly1, "Actual Values (Test)", "Predicted Values (
 # The predicted values is higher than the actual values around 10k.
 # The predicted values are also lower than the actual values around 30-40k?
 # The model is not entirely accurate in these two regions.
+
+#%%
+
+# Part 3: Ridge regression
+
