@@ -31,3 +31,12 @@ print(df.dtypes)
 print("\nQuestion 2\n")
 
 print(df.groupby('continent').sum())
+
+#####################################################################################
+# Question 3                                                                        #
+# Perform a statistical summary and analysis of beer servings for each continent:   #
+#####################################################################################
+
+print("\nQuestion 3\n")
+
+print(df['beer_servings'].describe())
