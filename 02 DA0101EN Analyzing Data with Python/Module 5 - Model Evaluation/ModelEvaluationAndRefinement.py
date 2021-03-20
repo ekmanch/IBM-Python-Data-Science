@@ -136,11 +136,15 @@ print("The mean of the folds are", Rcross_1.mean(), "and the standard deviation 
 # Below can only be used in jupyter notebooks
 # interact(f, order=(0, 6, 1), test_data=(0.05, 0.95, 0.05))
 
+x_train, x_test, y_train, y_test = train_test_split(x_data, y_data, test_size=0.45, random_state=0)
+
 #########################################################################
 # Question 4a                                                           #
 # We can perform polynomial transformations with more than one feature. #
 # Create a "PolynomialFeatures" object "pr1" of degree two?             #
 #########################################################################
+
+print("\nQuestion 4\n")
 
 pr1 = PolynomialFeatures(degree=2)
 
@@ -153,3 +157,18 @@ pr1 = PolynomialFeatures(degree=2)
 
 x_train_pr1 = pr1.fit_transform(x_train[['horsepower', 'curb-weight', 'engine-size', 'highway-mpg']])
 x_test_pr1 = pr1.fit_transform(x_test[['horsepower', 'curb-weight', 'engine-size', 'highway-mpg']])
+
+#####################################################################################
+# Question 4c                                                                       #
+# How many dimensions does the new feature have? Hint: use the attribute "shape"    #
+#####################################################################################
+
+print("The train set has", x_train_pr1.shape, "dimensions")
+print("The test set has", x_test_pr1.shape, "dimensions")
+
+#####################################################################
+# Question 4d                                                       #
+# Create a linear regression model "poly1" and train                #
+# the object using the method "fit"using the polynomial features?   #
+#####################################################################
+
