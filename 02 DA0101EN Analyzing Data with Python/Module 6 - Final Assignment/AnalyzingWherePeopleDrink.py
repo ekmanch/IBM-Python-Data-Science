@@ -51,7 +51,31 @@ print(df['beer_servings'].describe())
 #############################################################################
 
 print("\nQuestion 4\n")
-
+print("Box Plot was shown")
 sns.boxplot(x="continent", y="beer_servings", data=df)
+# plt.show()    <- Uncomment to show box plot
+plt.close()
+
+#########################################################################
+# Question 5                                                            #
+# Use the function regplot in the seaborn library to determine if the   #
+# number of wine servings is negatively or positively                   #
+# correlated with the number of beer servings.                          #
+#########################################################################
+
+print("\nQuestion 5\n")
+
+print("Scatter Plot was shown")
+
+# From Scatter Plot below it seems like there is a positive correlation
+sns.regplot(x="beer_servings", y="wine_servings", data=df)
+plt.ylim(0,)
 plt.show()
 plt.close()
+
+#################################################################################
+# Question 6                                                                    #
+# Fit a linear regression model to predict the 'total_litres_of_pure_alcohol'   #
+# using the number of 'wine_servings' then calculate  𝑅2                        #
+########################################################################################
+
