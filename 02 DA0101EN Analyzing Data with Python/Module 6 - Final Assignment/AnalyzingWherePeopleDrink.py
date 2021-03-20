@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import matplotlib as mpl
 import seaborn as sns
 from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
 
 df= pd.read_csv('https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/DA0101EN/edx/project/drinks.csv')
 # df.to_csv('original.csv')     <- Uncomment to save dataset
@@ -94,10 +95,20 @@ print("The R^2 score of the linear regression model is:", lm.score(X,Y))
 #########################################################################################
 # Question 7                                                                            #
 # Use list of features to predict the 'total_litres_of_pure_alcohol',                   #
-# split the data into training and testing and determine the  𝑅2  on the test data,     #
-# using the provided code:                                                              #
+# split the data into training and testing and determine the  𝑅2  on the test data      #
+#                                                                                       #
 # Note: Please use test_size = 0.10 and random_state = 0 in the following questions.    #
 #########################################################################################
 
 print("\nQuestion 7\n")
 
+lr = LinearRegression()
+
+x_data = df.drop(['total_litres_of_pure_alcohol', 'continent', 'country'],axis=1)
+y_data = df[['total_litres_of_pure_alcohol']]
+
+x_train, x_test, y_train, y_test = train_test_split(x_data, y_data, test_size=0.1, random_state=0)
+
+lr.fit(x_train[['beer_servings', 'spirit_servings', 'wine_servings']], y_train)
+
+print("The R^2 score of model using test data is:", lr.score(x_test, y_test))
