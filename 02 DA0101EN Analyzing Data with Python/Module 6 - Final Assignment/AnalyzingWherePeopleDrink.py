@@ -10,6 +10,8 @@ import matplotlib as mpl
 import seaborn as sns
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler,PolynomialFeatures
 
 df= pd.read_csv('https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/DA0101EN/edx/project/drinks.csv')
 # df.to_csv('original.csv')     <- Uncomment to save dataset
@@ -111,4 +113,32 @@ x_train, x_test, y_train, y_test = train_test_split(x_data, y_data, test_size=0.
 
 lr.fit(x_train[['beer_servings', 'spirit_servings', 'wine_servings']], y_train)
 
-print("The R^2 score of model using test data is:", lr.score(x_test, y_test))
+print("The R^2 score of the model using test data is:", lr.score(x_test, y_test))
+
+#########################################################################
+# Question 8                                                            #
+# Create a pipeline object that scales the data,                        #
+# performs a polynomial transform and fits a linear regression model.   #
+# Fit the object using the training data in the question above,         #
+# then calculate the R^2 using the test data.                           #
+# Take a screenshot of your code and the  𝑅2.                           #
+# There are some hints in the notebook:                                 #
+# 'scale'                                                               #
+# 'polynomial'                                                          #
+# 'model'                                                               #
+#                                                                       #
+# The second element in the tuple contains the model constructor:       #
+# StandardScaler()                                                      #
+# PolynomialFeatures(include_bias=False)                                #
+# LinearRegression()                                                    #
+#########################################################################
+
+print("\nQuestion 8\n")
+
+Input = [('scale',StandardScaler()), ('polynomial', PolynomialFeatures(include_bias=False)), ('model',LinearRegression())]
+
+pipe = Pipeline(Input)
+
+pipe.fit(x_train,y_train)
+
+print("The R^2 score of the model using test data is:", pipe.score(x_test, y_test))
