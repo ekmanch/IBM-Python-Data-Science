@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import cross_val_score
 
 # Import clean data 
 path = 'https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DA0101EN-SkillsNetwork/labs/Data%20files/module_5_auto.csv'
@@ -86,4 +87,23 @@ x_train_1, x_test_1, y_train_1, y_test_1 = train_test_split(x_data, y_data, test
 
 print("number of test samples :", x_test_1.shape[0])
 print("number of training samples:",x_train_1.shape[0])
+
+#########################################################################
+# Question 2                                                            #
+# Find the R^2 on the test data using 40% of the data for training data #
+#########################################################################
+
+print("\nQuestion 2\n")
+
+# Linear Regression object
+lre = LinearRegression()
+
+# Do a Linear Regression fit of the training data with 40/60 test/train split
+lre.fit(x_train_1[['horsepower']], y_train_1)
+
+print("R^2 score on test data: ", lre.score(x_test_1[['horsepower']], y_test_1))
+
+print("R^2 score on training data: ", lre.score(x_train_1[['horsepower']], y_train_1))
+
+
 
